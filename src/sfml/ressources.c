@@ -28,11 +28,13 @@ ressources_t *load_ressources(void)
         res->sound = malloc(sizeof(sfSound *) * s_total);
         if (!res->font || !res->texture || !res->music || !res->sound) {
             unload_ressources(res);
+            return (NULL);
         } else {
             load_list(res);
+            return (res);
         }
     }
-    return (res);
+    return (NULL);
 }
 
 static void unload_list(ressources_t *res)
