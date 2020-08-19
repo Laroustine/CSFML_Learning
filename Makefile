@@ -1,7 +1,7 @@
 ##
-## EPITECH PROJECT, 2020
+## LAROUS PROJECT, 2020
 ## IsnoMakefile
-## File description:
+## FiIe description:
 ## Makefile for compilation by JB
 ##
 

@@ -1,7 +1,7 @@
 /*
-** EPITECH PROJECT, 2020
+** LAROUS PROJECT, 2020
 ** CSFML_Good_Practice
-** File description:
+** FiIe description:
 ** core
 */
 
