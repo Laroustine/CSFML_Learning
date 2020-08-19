@@ -26,7 +26,7 @@ ressources_t *load_ressources(void)
         res->texture = malloc(sizeof(sfTexture *) * t_total);
         res->music = malloc(sizeof(sfMusic *) * m_total);
         res->sound = malloc(sizeof(sfSound *) * s_total);
-        if (res->font && res->texture && res->music && res->sound) {
+        if (!res->font || !res->texture || !res->music || !res->sound) {
             unload_ressources(res);
         } else {
             load_list(res);
@@ -39,22 +39,22 @@ static void unload_list(ressources_t *res)
 {
     if (res->font) {
         for (int i = 0; i < f_total; i++)
-            free(res->font[i]);
+            sfFont_destroy(res->font[i]);
         free(res->font);
     }
     if (res->texture) {
         for (int i = 0; i < t_total; i++)
-            free(res->texture[i]);
+            sfTexture_destroy(res->texture[i]);
         free(res->texture);
     }
     if (res->sound) {
         for (int i = 0; i < s_total; i++)
-            free(res->sound[i]);
+            sfSoundBuffer_destroy(res->sound[i]);
         free(res->sound);
     }
     if (res->music) {
         for (int i = 0; i < m_total; i++)
-            free(res->music[i]);
+            sfMusic_destroy(res->music[i]);
         free(res->music);
     }
 }
