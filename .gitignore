@@ -1,10 +1,10 @@
 # Project Name
 project
 
-# Prerequisites
+# Prerequisite
 *.d
 
-# Compiled Object files
+# Compiled Object file
 *.slo
 *.lo
 *.o
@@ -14,22 +14,26 @@ project
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
+# Compiled Dynamic librarie
 *.so
 *.dylib
 *.dll
+
+# Valgrind
+vgcore.*
+vgcore.16287
 
 # Fortran module files
 *.mod
 *.smod
 
-# Compiled Static libraries
+# Compiled Static librarie
 *.lai
 *.la
 *.a
 *.lib
 
-# Executables
+# Executable
 *.exe
 *.out
 *.app
