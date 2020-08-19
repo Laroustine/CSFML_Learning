@@ -6,6 +6,8 @@
 ##
 
 SRC	=	src/main.c	\
+		src/core.c	\
+		src/entity/basic.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
