@@ -17,16 +17,14 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-std=gnu11	\
-			-Wall	\
+CFLAGS	=	-Wall	\
 			-Wextra	\
-			-g	\
 			-Iinclude	\
 
-SFMLFLAGS =	-lsfml-graphics	\
-			-lsfml-window	\
-			-lsfml-audio	\
-			-lsfml-system	\
+SFMLFLAGS =	-lcsfml-graphics	\
+			-lcsfml-window	\
+			-lcsfml-system	\
+			-lcsfml-audio	\
 
 $(NAME):	$(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(SFMLFLAGS)
