@@ -32,14 +32,26 @@ sfSound *setup_sound(ressources_t *res)
     return (sp);
 }
 
-void music_event(sfEvent event, sfMusic *music)
+void music_event(sfEvent event, sfMusic *obj)
 {
     if (event.type == sfEvtKeyPressed && event.key.code == sfKeySpace) {
-        if (sfMusic_getStatus(music) == sfStopped)
-            sfMusic_play(music);
-        else if (sfMusic_getStatus(music) == sfPlaying)
-            sfMusic_stop(music);
+        if (sfMusic_getStatus(obj) == sfStopped)
+            sfMusic_play(obj);
+        else if (sfMusic_getStatus(obj) == sfPlaying)
+            sfMusic_stop(obj);
     }
+}
+
+void quit_event(sfEvent event, sfMusic *obj)
+{
+    if (event.type == sfEvtClosed)
+        sfRenderWindow_close(obj);
+}
+
+void sound_play_event(sfEvent event, sfSound *obj)
+{
+    if (event.type == sfEvtMouseButtonPressed)
+        sfSound_play(obj);
 }
 
 int core(int argc, char const *argv[])
@@ -50,17 +62,17 @@ int core(int argc, char const *argv[])
     sfSprite *sprite = setup_sprite(res);
     sfVideoMode mode = {1280, 720, 32};
     sfRenderWindow *rwin = sfRenderWindow_create(mode, "Name", sfDefaultStyle, NULL);
+    void (*event_list[3])(sfEvent e, void *item) = {&quit_event, &sound_play_event, &music_event};
+    void *object_list[3] = {rwin, sound, res->music[m_tuba_knight_boss]};
 
     sfRenderWindow_setFramerateLimit(rwin, 60);
     sfRenderWindow_setVerticalSyncEnabled(rwin, sfTrue);
     while (res != NULL && rwin != NULL && sfRenderWindow_isOpen(rwin)) {
         sfRenderWindow_clear(rwin, sfBlack);
         while (sfRenderWindow_pollEvent(rwin, &event)) {
-            if (event.type == sfEvtClosed)
-                sfRenderWindow_close(rwin);
-            if (event.type == sfEvtMouseButtonPressed)
-                sfSound_play(sound);
-            music_event(event, res->music[m_tuba_knight_boss]);
+            for (size_t i = 0; i < 3; i++) {
+                event_list[i](event, object_list[i]);
+            }
         }
         sfRenderWindow_drawSprite(rwin, sprite, NULL);
         sfRenderWindow_display(rwin);
