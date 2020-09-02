@@ -6,15 +6,22 @@
 */
 
 #include <stdlib.h>
-#include "ressources.h"
+#include "ressources_list.h"
 
 static void load_list(ressources_t *res)
 {
-    res->font[f_basic] = sfFont_createFromFile("res/font/Wild Hazelnut.ttf");
-    res->texture[t_icon] = sfTexture_createFromFile("res/img/icon.png", NULL);
-    res->texture[t_mech] = sfTexture_createFromFile("res/img/mech.jpg", NULL);
-    res->sound[s_laser] = sfSoundBuffer_createFromFile("res/sound/laser.wav");
-    res->music[m_tuba_knight_boss] = sfMusic_createFromFile("res/music/Tuba Knight Boss Theme.ogg");
+    for (size_t i = 0; i < f_total; i++) {
+        res->font[i] = sfFont_createFromFile(font_l[i]);
+    }
+    for (size_t i = 0; i < t_total; i++) {
+        res->texture[i] = sfTexture_createFromFile(texture_l[i], NULL);
+    }
+    for (size_t i = 0; i < s_total; i++) {
+        res->sound[i] = sfSoundBuffer_createFromFile(sound_l[i]);
+    }
+    for (size_t i = 0; i < m_total; i++) {
+        res->music[i] = sfMusic_createFromFile(music_l[i]);
+    }
 }
 
 ressources_t *load_ressources(void)
