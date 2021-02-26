@@ -16,6 +16,9 @@ int core(int argc, char const *argv[])
     sfRenderWindow_setFramerateLimit(rwin, 60);
     sfRenderWindow_setVerticalSyncEnabled(rwin, sfTrue);
     while (rwin != NULL && sfRenderWindow_isOpen(rwin)) {
+        sfRenderWindow_clear(rwin, sfBlack);
+        sfRenderWindow_display(rwin);
     }
+    sfRenderWindow_destroy(rwin);
     return (0);
 }

@@ -7,9 +7,6 @@
 
 SRC	=	src/main.c	\
 		src/core.c	\
-		src/entity/basic.c	\
-		src/sfml/ressources.c	\
-		src/sfml/event.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
