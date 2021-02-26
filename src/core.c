@@ -10,6 +10,7 @@
 
 int core(int argc, char const *argv[])
 {
+    sfEvent event;
     sfVideoMode mode = {1280, 720, 32};
     sfRenderWindow *rwin = sfRenderWindow_create(mode, "Name", sfDefaultStyle, NULL);
 
@@ -17,6 +18,10 @@ int core(int argc, char const *argv[])
     sfRenderWindow_setVerticalSyncEnabled(rwin, sfTrue);
     while (rwin != NULL && sfRenderWindow_isOpen(rwin)) {
         sfRenderWindow_clear(rwin, sfBlack);
+        while (sfRenderWindow_pollEvent(rwin, &event)) {
+            if (event.type == sfEvtClosed)
+                sfRenderWindow_close(rwin);
+        }
         sfRenderWindow_display(rwin);
     }
     sfRenderWindow_destroy(rwin);
