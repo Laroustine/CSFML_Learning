@@ -1,9 +1,9 @@
-/*
-** EPITECH PROJECT, 2020
-** CSFML_Learning
-** File description:
-** event
-*/
+/**
+ * @ Author: Laroustine
+ * @ Modified time: 05/11 00:26
+ * @ Modified by: Laroustine
+ * @ Description: This script has been made by me ↖(^▽^)↗
+ */
 
 #ifndef EVENT_H_
 #define EVENT_H_

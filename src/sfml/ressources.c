@@ -1,9 +1,9 @@
-/*
-** LAROUS PROJECT, 2020
-** CSFML_Good_Practice
-** FiIe description:
-** ressources
-*/
+/**
+ * @ Author: Laroustine
+ * @ Modified time: 05/11 00:23
+ * @ Modified by: Laroustine
+ * @ Description: This script has been made by me ↖(^▽^)↗
+ */
 
 #include <stdlib.h>
 #include "ressources_list.h"

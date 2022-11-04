@@ -1,9 +1,9 @@
-/*
-** LAROUS PROJECT, 2020
-** CSFML_Good_Practice
-** FiIe description:
-** main
-*/
+/**
+ * @ Author: Laroustine
+ * @ Modified time: 05/11 00:25
+ * @ Modified by: Laroustine
+ * @ Description: This script has been made by me ↖(^▽^)↗
+ */
 
 #include <stdio.h>
 #include <string.h>

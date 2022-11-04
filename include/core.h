@@ -1,9 +1,9 @@
-/*
-** LAROUS PROJECT, 2020
-** CSFML_Good_Practice
-** FiIe description:
-** core
-*/
+/**
+ * @ Author: Laroustine
+ * @ Modified time: 05/11 00:26
+ * @ Modified by: Laroustine
+ * @ Description: This script has been made by me ↖(^▽^)↗
+ */
 
 #ifndef CORE_H_
 #define CORE_H_
