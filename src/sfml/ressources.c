@@ -1,11 +1,12 @@
 /**
  * @ Author: Laroustine
- * @ Modified time: 05/11 00:23
+ * @ Modified time: 05/11 14:56
  * @ Modified by: Laroustine
  * @ Description: This script has been made by me ↖(^▽^)↗
  */
 
 #include <stdlib.h>
+#include "ressources.h"
 #include "ressources_list.h"
 
 static void load_list(ressources_t *res)

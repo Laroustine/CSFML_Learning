@@ -1,6 +1,6 @@
 /**
  * @ Author: Laroustine
- * @ Modified time: 05/11 00:26
+ * @ Modified time: 05/11 14:58
  * @ Modified by: Laroustine
  * @ Description: This script has been made by me ↖(^▽^)↗
  */
@@ -23,7 +23,8 @@ typedef enum texture_e
 {
     t_icon = 0,
     t_mech = 1,
-    t_total = 2,
+    t_keybord = 2,
+    t_total = 3,
 } texture_t;
 
 typedef enum music_e
